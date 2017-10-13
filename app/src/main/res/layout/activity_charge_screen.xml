@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33ccff"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_wave"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+        <me.itangqi.waveloadingview.WaveLoadingView
+        android:id="@+id/waveLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:wlv_shapeType="rectangle"
+        app:wlv_round_rectangle="true"
+        app:wlv_triangle_direction="north"
+        app:wlv_waveAmplitude="20"
+        app:wlv_waveColor="#f1f1f1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvBatteryLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_battery_item"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+
+            <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:id="@+id/waveProgressbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="1dp"
+                app:rcBackgroundColor="@color/white_normal"
+                app:rcMax="100"
+                app:rcRadius="10dp" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/icon_battery" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvRemainingTime"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="About 2 hrs and 5 mins left"
+            android:textColor="@color/white" />
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/header_selected"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<com.hitapps.sdk.helper.DoubleWaveView-->
+        <!--android:id="@+id/activity_battery_doublewaveview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--DoubleWaveView:peakValue="10dp"-->
+        <!--DoubleWaveView:speedOne="7"-->
+        <!--DoubleWaveView:speedTwo="5"-->
+        <!--DoubleWaveView:waveColor="#fff"-->
+        <!--DoubleWaveView:waveHeight="30dp" />-->
+
+        <!--</LinearLayout>-->
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/linearLayout3">
+
+        <!--<com.google.android.gms.ads.NativeExpressAdView-->
+            <!--android:id="@+id/adView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--ads:adUnitId="ca-app-pub-7114357048344770/2607883642"-->
+            <!--ads:adSize="320x250">-->
+        <!--</com.google.android.gms.ads.NativeExpressAdView>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp">
+
+        <FrameLayout
+            android:id="@+id/activity_battery_charging_process"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <ProgressBar
+                    android:id="@+id/activity_battery_charging_progressbar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginRight="75dp"
+                    android:maxHeight="20dp"
+                    android:minHeight="20dp"
+                    android:scaleY="6" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp">
+
+                        <ImageView
+                            android:id="@+id/activity_battery_first_process"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@mipmap/icon_battery_1" />
+
+                        <ImageView
+                            android:id="@+id/ivFirstProcessCircle"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_progress" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/activity_battery_first_process"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/battery_first_process"
+                            android:textColor="@color/activity_battery"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/activity_battery_second_process"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/icon_continuous_1"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_centerHorizontal="true"
+                             />
+
+                        <ImageView
+                            android:id="@+id/ivSecondProcessCircle"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_progress" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/activity_battery_second_process"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/battery_second_process"
+                            android:textColor="@color/activity_battery"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/activity_battery_third_process"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@mipmap/icon_tricke_1"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"/>
+
+                        <ImageView
+                            android:id="@+id/ivThirdProcessCircle"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_progress" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/activity_battery_third_process"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="@string/battery_third_process"
+                            android:textColor="@color/activity_battery"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BatteryCharge</string>
+
+    <string name="battery_first_process">Speed</string>
+    <string name="battery_second_process">Continuous</string>
+    <string name="battery_third_process">Trickle</string>
+</resources>
